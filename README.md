@@ -16,6 +16,7 @@ git clone https://github.com/sprintcube/docker-compose-lamp.git
 cd docker-compose-lamp/
 git fetch --all
 git checkout 7.2.x
+cp sample.env .env
 docker-compose up -d
 ```
 
@@ -51,7 +52,7 @@ This will be used to store Apache logs. The default value for this is `./logs/ap
 
 _**MYSQL_LOG_DIR**_
 
-This will be used to store Apache logs. The default value for this is `./logs/mysql`.
+This will be used to store MySQL logs. The default value for this is `./logs/mysql`.
 
 ## Web Server
 
@@ -69,10 +70,10 @@ By default following modules are enabled.
 
 #### Connect via SSH
 
-You can connect to web server using `docker exec` command to perform various operation on it. Use below command to login to container via ssh.
+You can connect to web server using `docker-compose exec` command to perform various operation on it. Use below command to login to container via ssh.
 
 ```shell
-docker exec -it 7.2.x-webserver /bin/bash
+docker-compose exec webserver bash
 ```
 
 ## PHP
